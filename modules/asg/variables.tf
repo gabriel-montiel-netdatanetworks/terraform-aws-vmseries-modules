@@ -109,6 +109,12 @@ variable "lifecycle_hook_timeout" {
   default     = 3000
 }
 
+variable "iam_instance_profile" {
+  description = "IAM instance profile."
+  default     = null
+  type        = string
+}
+
 variable "desired_capacity" {
   description = "Number of Amazon EC2 instances that should be running in the group."
   type        = number
