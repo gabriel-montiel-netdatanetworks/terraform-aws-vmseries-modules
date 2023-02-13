@@ -36,6 +36,10 @@ resource "aws_launch_template" "this" {
     [for k, v in var.bootstrap_options : "${k}=${v}"],
   ))))
 
+  iam_instance_profile {
+    name = var.iam_instance_profile
+  }
+
   network_interfaces {
     device_index                = 0
     security_groups             = [local.default_eni_sg_ids[0]]
